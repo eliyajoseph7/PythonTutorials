@@ -7,7 +7,7 @@ mainWindow["padx"] = 8
 
 topFrame = Frame(mainWindow)
 topFrame.grid(row=0, column=0, sticky='nw')
-entry = Entry(topFrame, width=30)
+entry = Entry(topFrame)
 entry.grid(row=0, column=0, stick='nsew', pady=2)
 
 buttonsFrame = Frame(mainWindow)
@@ -27,13 +27,13 @@ for key in keys:
     col = 0
     for value in key:
         button = Button(buttonsFrame, text=value[0], width=5, height=2)
-        button.grid(row=row, column=col, columnspan=value[1], sticky='nsew')
+        button.grid(row=row, column=col, columnspan=value[1], sticky=E + W)
         col += 1
     row += 1
 
 mainWindow.update() #this method must be called inorder to customize the size of the main window
-mainWindow.minsize(buttonsFrame.winfo_width() + 8, topFrame.winfo_height() + buttonsFrame.winfo_width())
-mainWindow.maxsize(buttonsFrame.winfo_width() + 8, topFrame.winfo_height() + buttonsFrame.winfo_width())
+mainWindow.minsize(buttonsFrame.winfo_width() + 8, entry.winfo_height() + buttonsFrame.winfo_width())
+mainWindow.maxsize(buttonsFrame.winfo_width() + 8, entry.winfo_height() + buttonsFrame.winfo_width())
 
 mainWindow.minsize()
 
