@@ -31,5 +31,10 @@ for key in keys:
         col += 1
     row += 1
 
+mainWindow.update() #this method must be called inorder to customize the size of the main window
+mainWindow.minsize(buttonsFrame.winfo_width() + 8, topFrame.winfo_height() + buttonsFrame.winfo_width())
+mainWindow.maxsize(buttonsFrame.winfo_width() + 8, topFrame.winfo_height() + buttonsFrame.winfo_width())
+
+mainWindow.minsize()
 
 mainloop()
